@@ -77,7 +77,7 @@ y = [1 0 0; 1 1 1; 1 1 0];
 disp(x);
 disp(y);
 
-m = x*y;1
+m = x*y;
 
 disp(m);
 
