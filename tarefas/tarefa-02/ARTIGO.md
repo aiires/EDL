@@ -1,5 +1,5 @@
 # Introdução
-Este artigo tem o objetivo de mostrar uma linguagem de programação onde será descrito sua origem e influências, criando uma linha o tempo para tal linguagem. Além disso, abordará sobre a classificação (imp/func/log/oo, est/din, usos) e comparará e avaliará relativamente com outras linguagens (read/write, expressividade).
+ Este artigo tem o objetivo de mostrar uma linguagem de programação onde será descrito sua origem e influências, criando uma linha o tempo para tal linguagem. Além disso, abordará sobre a classificação (imp/func/log/oo, est/din, usos) e comparará e avaliará relativamente com outras linguagens (read/write, expressividade).
 
 Linguagem Abordada: **Scilab**
 
@@ -7,9 +7,9 @@ Linguagem Abordada: **Scilab**
 
 # Origens e Influências
 
-O Scilab é um software científico para computação numérica semelhante ao Matlab que fornece um poderoso ambiente computacional aberto para aplicações científicas.
+ O Scilab é um software científico para computação numérica semelhante ao Matlab que fornece um poderoso ambiente computacional aberto para aplicações científicas.
 
-Desenvolvido desde 1990 pelos pesquisadores do INRIA (Institut National de Recherche en Informatique et en Automatique) e do ENPC (École Nationale des Ponts et Chaussées), então pelo Consorcio Scilab desde Maio de 2003, Scilab é agora mantido e desenvolvido pelo Scilab Enterprises desde Julho de 2012. Distribuído gratuitamente via Internet desde 1994, o Scilab é atualmente usado em diversos ambientes industriais e educacionais pelo mundo.
+ Desenvolvido desde 1990 pelos pesquisadores do INRIA (Institut National de Recherche en Informatique et en Automatique) e do ENPC (École Nationale des Ponts et Chaussées), então pelo Consorcio Scilab desde Maio de 2003, Scilab é agora mantido e desenvolvido pelo Scilab Enterprises desde Julho de 2012. Distribuído gratuitamente via Internet desde 1994, o Scilab é atualmente usado em diversos ambientes industriais e educacionais pelo mundo.
 
 
 # Classificação
@@ -27,64 +27,64 @@ Desenvolvido desde 1990 pelos pesquisadores do INRIA (Institut National de Reche
 
 ### Código em {C}:
 
-#include <stdio.h>
-int main(){
-  int i,j,k,aux = 0;
-	int x[3][3] = {{1,1,0},{0,0,1},{1,1,1}};
-	int y[3][3] = {{1,0,0},{1,1,1},{1,1,0}};
-	int matriz[3][3];
+	#include <stdio.h>
+	int main(){
+ 	 int i,j,k,aux = 0;
+		int x[3][3] = {{1,1,0},{0,0,1},{1,1,1}};
+		int y[3][3] = {{1,0,0},{1,1,1},{1,1,0}};
+		int matriz[3][3];
 
-	for(i=0;i<3;i++){
-        for(j=0;j<3;j++){
-            printf(" %d ",x[i][j]);
-        }
-        printf("\n");
-	}
-	printf("\n");
+		for(i=0;i<3;i++){
+        		for(j=0;j<3;j++){
+            			printf(" %d ",x[i][j]);
+        		}
+        		printf("\n");
+		}
+		printf("\n");
 
-	for(i=0;i<3;i++){
-        for(j=0;j<3;j++){
-            printf(" %d ",y[i][j]);
-        }
-        printf("\n");
-	}
-	printf("\n");
+		for(i=0;i<3;i++){
+        		for(j=0;j<3;j++){
+            			printf(" %d ",y[i][j]);
+        		}
+        		printf("\n");
+		}
+		printf("\n");
 
-	for(i=0;i<3;i++){
-        for(j=0;j<3;j++){
+		for(i=0;i<3;i++){
+        		for(j=0;j<3;j++){
 
-            matriz[i][j] = 0;
+            			matriz[i][j] = 0;
 
-            for(k=0;k<3;k++){
-                aux += x[i][k]*y[k][j];
-            }
+            			for(k=0;k<3;k++){
+                			aux += x[i][k]*y[k][j];
+            			}
 
-            matriz[i][j] = aux;
-            aux = 0;
+            			matriz[i][j] = aux;
+            			aux = 0;
 
-            printf(" %d ",matriz[i][j]);
-        }
-        printf("\n");
-	}
+            			printf(" %d ",matriz[i][j]);
+        		}
+        		printf("\n");
+		}
 
 	return 0;
 }
 
 ### Código em Scilab:
-x = [1 1 0; 0 0 1; 1 1 1];
-y = [1 0 0; 1 1 1; 1 1 0];
+	x = [1 1 0; 0 0 1; 1 1 1];
+	y = [1 0 0; 1 1 1; 1 1 0];
 
-disp(x);
-disp(y);
+	disp(x);
+	disp(y);
 
-m = x*y;
+	m = x*y;
 
-disp(m);
+	disp(m);
 
 
 # Conclusão
 
-## Trabalhando com Matrizes
+Como pode-se ser visto, o nível de abstração do Scilab é muito maior para efetuar operações com matrizes do que na linguagem C. 
 
 ### Scilab
 - Menos Readability;
