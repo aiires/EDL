@@ -23,9 +23,26 @@ Linguagem Abordada: **Scilab**
 
 # Avaliação Comparativa
 
-## Multiplicando Matrizes podemos comparar a linguagem Scilab com {C}
+## Trabalhando com Matrizes podemos comparar a linguagem Scilab com {C}
 
-### Código em {C}:
+	x = [1 1 0; 0 0 1; 1 1 1];
+	y = [1 0 0; 1 1 1; 1 1 0];
+
+	z = [x y]; //Unindo duas matrizes (linhas)
+	c = [x;y]; //Unindo duas matrizes (colunas)
+
+	t = z'; //Matriz transposta de z
+
+	m = z*t; //Multiplicando duas matrizes
+
+	disp(z,"z");
+	disp(c,"c");
+	disp(t,"t");
+	disp(m,"m");
+
+
+
+### Código em {C} de multiplicação de duas matrizes 3x3:
 
 	#include <stdio.h>
 	int main(){
@@ -70,24 +87,50 @@ Linguagem Abordada: **Scilab**
 	return 0;
 }
 
-### Código em Scilab:
-	x = [1 1 0; 0 0 1; 1 1 1];
-	y = [1 0 0; 1 1 1; 1 1 0];
+## Trabalhando com EDO'S em Scilab
 
-	disp(x);
-	disp(y);
+### Solução numérica de uma EDO de primeira ordem:
+	function dx = f(x,y)
+    		dx = -2*x-y;
+	endfunction
 
-	m = x*y;
+	y0 = -1;
+	x0 = 0;
+	t = 0.4;
 
-	disp(m);
+	sol = ode(y0,x0,t,f);
 
+	disp(sol,"answer");
+
+answer -0.8109602
+	
+### Plotando gráfico com base nas soluções numéricas de uma EDO de segunda ordem:
+	clf
+	function dx = f(t,x)
+    		dx(1) = x(2);
+    		dx(2) = 25*fem(t)-6*x(2)-25*x(1);
+	endfunction
+
+	function v = fem(t)
+    		v = 8*sin(120*t);
+	endfunction
+
+	t = 0:0.1:10;
+
+	sol = ode([0;0],0,t,f);
+
+	plot(t,sol(1,:));
+	plot(t,0*t,"r");
+	
+<img src="Untitled.png" title = "Grafico da EDO de segunda ordem" />
+	
 
 # Conclusão
 
 Como pode-se ser visto, o nível de abstração do Scilab é muito maior para efetuar operações com matrizes do que na linguagem C. 
 
 ### Scilab
-- Menos Readability;
+- Mais Readability;
 - Mais Writeability;
 - Maior Expressividade.
 
