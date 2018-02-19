@@ -6,7 +6,6 @@ function love.load()
 	fundo = love.graphics.newImage("fundo2.jpg")
 	fundo2 = love.graphics.newImage("fundo2_.jpg")
 	image_play = love.graphics.newImage("play.png")
-	image_play_click = love.graphics.newImage("play_click.png")
 	logo = love.graphics.newImage("logo.png")
 
 	vida = 3
